@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_24_091435) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_24_140112) do
   create_table "sleep_records", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "start_time"
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_091435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sleep_records_on_user_id"
+  end
+
+  create_table "user_followers", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "follower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id"], name: "index_user_followers_on_follower_id"
+    t.index ["user_id"], name: "index_user_followers_on_user_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
