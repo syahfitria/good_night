@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# Create some users
+user1 = User.create(name: "Ann")
+user2 = User.create(name: "Rick")
+user3 = User.create(name: "Maria")
+
+# Create some sleep records for the users
+user1.sleep_records.create(start_time: Date.today.prev_week.at_beginning_of_week, end_time: 4.hours.ago, duration: start_of_previous_week - 4.hours.ago)
+user1.sleep_records.create(start_time: Date.today.prev_week.at_beginning_of_week, end_time: 6.hours.ago, duration: start_of_week - 6.hours.ago)
+user2.sleep_records.create(start_time: Date.today.prev_week.at_beginning_of_week, end_time: 3.hours.ago, duration: 7.hours.ago - 3.hours.ago)
+user3.sleep_records.create(start_time: Date.today.prev_week.at_beginning_of_week, end_time: 9.hours.ago, duration: 12.hours.ago - 9.hours.ago)
