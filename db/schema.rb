@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_140112) do
 
   create_table "user_followers", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "follower_id"
+    t.bigint "user_follower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["follower_id"], name: "index_user_followers_on_follower_id"
+    t.index ["user_follower_id"], name: "index_user_followers_on_user_follower_id"
     t.index ["user_id"], name: "index_user_followers_on_user_id"
   end
 
