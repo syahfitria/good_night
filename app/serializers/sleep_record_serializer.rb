@@ -6,7 +6,8 @@ class SleepRecordSerializer
       {
         id: record.id,
         user: record.user.name,
-        clocked_in: record.start_time
+        clocked_in: record.start_time,
+        clocked_out: record.end_time
       }
     end
   end
