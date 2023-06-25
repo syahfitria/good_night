@@ -9,6 +9,18 @@ class UserFollowersController < ApplicationController
     render_json("Something went wrong", code: :internal_server_error)
   end
 
+  def sleep_record_follower
+    start_of_previous_week = Date.today.prev_week.at_beginning_of_week.strftime('%Y-%m-%d %H:%M:%S')
+    end_of_previous_week = Date.today.prev_week.at_end_of_week.strftime('%Y-%m-%d %H:%M:%S')
+    
+    follower_sleep_record = UserFollower.joins(user_follower: :sleep_records).where(user_id: params[:user_id])
+    .where(sleep_records: {start_time: start_of_previous_week..end_of_previous_week})
+    .order('sleep_records.duration DESC')
+    data = UserFollowerSleepRecordSerializer.instance.serialize(follower_sleep_record)
+    
+    render_json(data: data)
+  end
+
   private
   def perform_actions
     case params[:action_type]
