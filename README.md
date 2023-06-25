@@ -31,10 +31,10 @@ This is a 3rd requirement response example
   * Request body: `{}`
   * Response body:
   ```json
-                  {
-                        "msg": "User was follow/unfollow",
-                        "data": {}
-                    }
+    {
+        "msg": "User was follow/unfollow",
+        "data": {}
+    }
   ```
   * Response code: 200
 
@@ -43,10 +43,10 @@ This is a 3rd requirement response example
   * Request body: `{"user_id": 4, "clock_in": "2023-06-25 08:00:00", "clock_out": "2023-06-25 09:00:00"}`
   * Response body:
     ```json
-                    {
-                        "msg": "Clock has been saved",
-                        "data": {}
-                    }
+      {
+          "msg": "Clock has been saved",
+          "data": {}
+      }
     ```
   * Response code: 200
 
@@ -55,17 +55,17 @@ This is a 3rd requirement response example
   * Request body: `{}`
   * Response body:
     ```json
+    {
+      "msg": "OK",
+      "data": [
           {
-          "msg": "OK",
-          "data": [
-              {
-                  "id": 2,
-                  "user": "Ann",
-                  "clocked_in": "2023-06-12T00:00:00.000Z",
-                  "clocked_out": "2023-06-25T02:08:44.489Z",
-                  "duration": 10800
-              }
-          ]
-      }
+              "id": 2,
+              "user": "Ann",
+              "clocked_in": "2023-06-12T00:00:00.000Z",
+              "clocked_out": "2023-06-25T02:08:44.489Z",
+              "duration": 10800
+          }
+      ]
+    }
     ```
   * Response code: 200
