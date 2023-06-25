@@ -30,7 +30,7 @@ This is a 3rd requirement response example
   * API end-point: `PUT /user/:user_id/follow|unfollow/:follower_id`
   * Request body: `{}`
   * Response body:
-    ```json
+  ```json
                   {
                         "msg": "User was follow/unfollow",
                         "data": {}
