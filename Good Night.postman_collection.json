@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "6fcdab27-6858-4c1e-b843-a77dca723c49",
+		"name": "Good Night",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26114801"
+	},
+	"item": [
+		{
+			"name": "get all slep record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sleep_record_all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sleep_record_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create sleep record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"clock_in\": \"2023-06-25 08:00:00\",\r\n    \"clock_out\": \"2023-06-25 09:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sleep_record",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sleep_record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Follow/Unfollow",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/:user_id/:action_type/:follower_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":user_id",
+						":action_type",
+						":follower_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": null
+						},
+						{
+							"key": "action_type",
+							"value": null
+						},
+						{
+							"key": "follower_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user follow sleep record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/:user_id/user_follower",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":user_id",
+						"user_follower"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
